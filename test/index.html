@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      #list {
+        width: 160px;
+        height: 200px;
+        border: 1px solid #f4979a;
+        box-shadow: 0 0 5px #f4979a;
+        display: none;
+        position: absolute;
+      }
+      #list li {
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+        color: #ea6a66;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ds">
+      <p>first</p>
+      <p>32</p>
+      <p>ff</p>
+      <p>fs</p>
+      <p>g</p>
+      <p>c</p>
+      <p>kj</p>
+      <p>ew</p>
+      <p>qw</p>
+    </div>
+
+    <ul id="list">
+      <li data-index="0">下载</li>
+      <li data-index="1">下载</li>
+      <li data-index="2">下载</li>
+    </ul>
+    <script>
+      let ds = document.getElementById('ds')
+      ds.onclick = function(e) {
+        console.log(e)
+      }
+      let listBox = document.getElementById('list')
+      listBox.onclick = function(e) {
+        console.log(e.target.dataset)
+      }
+      document.oncontextmenu = function(e) {
+        var ev = e || event
+        e.preventDefault()
+        var x = ev.clientX
+        var y = ev.clientY
+        listBox.style.display = 'block'
+        listBox.style.top = y + 'px'
+        listBox.style.left = x + 'px'
+        document.onclick = function() {
+          listBox.style.display = 'none'
+        }
+      }
+    </script>
+  </body>
+</html>

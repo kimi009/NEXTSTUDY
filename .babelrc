@@ -1,0 +1,15 @@
+{
+  //覆盖next.js的默认的babel配置，以本文件的babel配置为准
+  "presets": ["next/babel"],
+  "plugins": [
+    //下面的插件主要针对antd组件引入的转义
+    [
+      "import",
+      {
+        "libraryName": "antd"
+      }
+    ],
+    //ssr 预编译模式
+    ["styled-components", { "ssr": true }]
+  ]
+}
