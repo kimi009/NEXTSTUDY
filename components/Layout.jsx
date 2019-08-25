@@ -119,7 +119,7 @@ const  MyLayout = ({ children,user,logout,router })=> {
         </Container>
       </Content>
       <Footer style={footStyle}>
-        Develop by kimi
+        Developed by kimi
       </Footer>
       <style jsx>{`
         .header-inner{
