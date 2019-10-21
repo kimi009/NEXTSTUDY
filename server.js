@@ -19,7 +19,7 @@ const option = {
   host: '203.195.150.105',
   password: 'CHENSHUYE009chenshuye009'
 }
-const redis = new Redis(option)
+// const redis = new Redis(option)
 
 //等待pages页面内容编译完成
 app.prepare().then(() => {
@@ -31,8 +31,8 @@ app.prepare().then(() => {
   server.keys = ['Kimi Bolg Study']
   const SESSION_CONFIG = {
     key: 'bolgID',
-    maxAge: 2 * 24 * 60 * 60 * 1000,//过期时间
-    store: new RedisSessionStore(redis)
+    maxAge: 2 * 24 * 60 * 60 * 1000//过期时间
+//     store: new RedisSessionStore(redis)
   }
 
   server.use(session(SESSION_CONFIG, server))
