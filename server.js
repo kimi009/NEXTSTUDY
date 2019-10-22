@@ -6,7 +6,7 @@ const auth = require('./server/auth')
 const api = require('./server/api')
 const koaBody = require('koa-body')
 
-const Redis = require('ioredis')
+// const Redis = require('ioredis')
 const RedisSessionStore = require('./server/session-store')
 //判断是否是出于开发模式
 const dev = process.env.NODE_ENV !== 'production'
